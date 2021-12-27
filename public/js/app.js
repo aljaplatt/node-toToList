@@ -1,16 +1,16 @@
 // selectors
-const todoInput = document.querySelector(".todo-input");
-const todoButton = document.querySelector(".todo-button");
-const todoList = document.querySelector(".todo-list");
+const taskInput = document.querySelector(".task-input");
+const taskButton = document.querySelector(".task-button");
+const taskList = document.querySelector(".task-list");
 
 // event listeners
-todoButton.addEventListener("click", addToDo);
+taskButton.addEventListener("click", addTask);
 
 // functions
-function addToDo(event) {
+function addTask(event) {
   // prevents form submission
   event.preventDefault();
-  //   console.log("hello");
+  console.log("hello");
   // create task div - taskDiv
   const taskDiv = document.createElement("div");
   taskDiv.classList.add("task");
@@ -39,4 +39,6 @@ function addToDo(event) {
   deleteButton.classList.add("complete-btn");
   // append button to the task div
   taskDiv.appendChild(deleteButton);
+  // append to list
+  taskList.appendChild(taskDiv);
 }
