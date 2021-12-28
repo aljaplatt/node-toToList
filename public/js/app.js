@@ -5,6 +5,7 @@ const taskList = document.querySelector(".task-list");
 
 // event listeners
 taskButton.addEventListener("click", addTask);
+taskList.addEventListener("click", deleteTask);
 
 // functions
 function addTask(event) {
@@ -16,7 +17,7 @@ function addTask(event) {
   taskDiv.classList.add("task");
   // create list item - newTask
   const newTask = document.createElement("li");
-  newTask.innerText = "bombaclaart"; // innertext doesnt carry whitespace - web dev simp video
+  newTask.innerText = taskInput.value; // innertext doesnt carry whitespace - web dev simp video
   newTask.classList.add("task-item");
   // append li (newTask) to div
   taskDiv.appendChild(newTask);
@@ -36,9 +37,22 @@ function addTask(event) {
   // add icon to button - innerHTML??
   deleteButton.innerHTML = '<i class="fas fa-trash"></i>';
   // add class to button
-  deleteButton.classList.add("complete-btn");
+  deleteButton.classList.add("delete-btn");
   // append button to the task div
   taskDiv.appendChild(deleteButton);
   // append to list
   taskList.appendChild(taskDiv);
+  // clear form input value
+  taskInput.value = "";
+}
+
+function deleteTask(e) {
+  //
+  const item = e.target;
+  //
+  if (item.classList[0] === "delete-btn") {
+    // remove whole parent element
+    const task = item.parentElement;
+    task.remove();
+  }
 }

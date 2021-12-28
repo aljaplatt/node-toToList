@@ -5,8 +5,19 @@
 }
 
 body {
-  background-image: linear-gradient(120deg, #65c332, #fefae0);
-  color: #fff;
+  background-image: linear-gradient(
+    180deg,
+    #277da1,
+    #577590,
+    #4d908e,
+    #43aa8b,
+    #90be6d,
+    #f48c06,
+    #e85d04,
+    #dc2f02,
+    #6a040f
+  );
+  color: #fefae0;
   font-family: "Ubuntu", sans-serif;
   min-height: 100vh;
   font-size: 1.5rem;
@@ -35,7 +46,7 @@ form input {
 
 form button {
   padding: 0.6rem 0.5rem 0.7rem;
-  color: #65c332;
+  color: #277da1;
   background: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -45,6 +56,72 @@ form button {
 
 form button:hover {
   color: #fff;
-  background: #65c332;
-  border: 5px solid #65c332;
+  background: #277da1;
+  border: 5px solid #277da1;
+}
+
+.task-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem;
+  background: #fff;
+  color: #000;
+  font-size: 1.5rem;
+}
+
+.task {
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.task li {
+  flex: 1; /* pushes the complete-btn to the right, next to delete. */
+}
+
+.task-item {
+  padding: 0rem 0.5rem;
+}
+
+.delete-btn,
+.complete-btn {
+  background: #43aa8b;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.delete-btn {
+  background: #dc2f02;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.delete-btn:hover {
+  color: #dc2f02;
+  background: #fff;
+}
+
+.complete-btn:hover {
+  color: #43aa8b;
+  background: #fff;
+}
+
+/* prevents clicking on icon */
+.fa-trash,
+.fa-check {
+  pointer-events: none;
 }
