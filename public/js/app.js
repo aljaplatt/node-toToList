@@ -55,4 +55,11 @@ function deleteTask(e) {
     const task = item.parentElement;
     task.remove();
   }
+
+  // mark as completed
+  if (item.classList[0] === "complete-btn") {
+    // remove whole parent element
+    const task = item.parentElement;
+    task.classList.toggle("completed");
+  }
 }
