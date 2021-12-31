@@ -1,7 +1,6 @@
 import express from "express";
 import path from "path";
 
-import ejs from "ejs";
 import __dirname from "./dirname.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";

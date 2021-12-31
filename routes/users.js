@@ -1,9 +1,17 @@
 import express from "express";
+
+import { getAllTasks } from "../models/tasks.js";
+
 const router = express.Router();
 
-/* GET users listing. */
+/* GET ALL TASKS */
 router.get("/", function (req, res, next) {
-  res.json({ message: "I wish we had some information to give you ☹️" });
+  const tasks = getAllTasks();
+  res.json({
+    success: true,
+    message: "Here are your tasks",
+    payload: tasks,
+  });
 });
 
 export default router;

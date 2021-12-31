@@ -8,6 +8,7 @@ body {
   background-image: linear-gradient(
     180deg,
     #277da1,
+    #277da1,
     #577590,
     #4d908e,
     #43aa8b,
@@ -17,7 +18,7 @@ body {
     #dc2f02,
     #6a040f
   );
-  color: #fefae0;
+  color: #fff;
   font-family: "Ubuntu", sans-serif;
   min-height: 100vh;
   font-size: 1.5rem;
@@ -106,8 +107,8 @@ form button:hover {
 
 .delete-btn,
 .complete-btn {
-  background: #43aa8b;
-  color: #fff;
+  background: #fff;
+  color: #43aa8b;
   border: none;
   padding: 1rem;
   cursor: pointer;
@@ -115,19 +116,19 @@ form button:hover {
 }
 
 .delete-btn {
-  background: #dc2f02;
+  color: #dc2f02;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
 
 .delete-btn:hover {
-  color: #dc2f02;
-  background: #fff;
+  background: #dc2f02;
+  color: #fff;
 }
 
 .complete-btn:hover {
-  color: #43aa8b;
-  background: #fff;
+  background: #43aa8b;
+  color: #fff;
 }
 
 /* prevents clicking on icon */
