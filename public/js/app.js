@@ -2,10 +2,40 @@
 const taskInput = document.querySelector(".task-input");
 const taskButton = document.querySelector(".task-button");
 const taskList = document.querySelector(".task-list");
+const seinQuotePar = document.querySelector(".quote");
+const seinQuoteAuth = document.querySelector(".author");
 
 // event listeners
 taskButton.addEventListener("click", addTask);
 taskList.addEventListener("click", deleteTask);
+
+// GET USER INPUT
+const getUserInput = function (e) {
+  let newTask = document.querySelector("form").value;
+  console.log(`User input: ${newTask}.`);
+  return newTask;
+};
+
+const url = "http://localhost:3000";
+
+async function getTasks() {
+  const response = await fetch(`${url}/tasks`);
+  console.log(response);
+  const { payload } = await response.json();
+  console.log(payload);
+  return payload;
+}
+
+async function getSeinfeldQuote() {
+  const response = await fetch("https://seinfeld-quotes.herokuapp.com/random");
+  const data = await response.json();
+  let seinQuote = data.quote;
+  let seinAuthor = data.author;
+  seinQuotePar.innerText = seinQuote;
+  seinQuoteAuth.innerText = seinAuthor;
+}
+
+getSeinfeldQuote();
 
 // functions
 function addTask(event) {
